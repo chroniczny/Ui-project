@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="styles.css">
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!--<script src="helloworld.js"></script>-->
 
+    <!--  Hello solarsystem Code -->
     <script src="hellosolarsystem.js"></script>
     <script src="components/hello.js"></script>
     <script src="components/about.js"></script>
     <script src="components/people.js"></script>
     <script src="components/person.js"></script>
+    <script src="services/people.js"></script>
+
+    <!-- Visualizer and url -->
+    <!--<link rel="stylesheet" href="styles.css">-->
+    <script src="//npmcdn.com/show-current-browser-url"></script>
+    <!--<script src="//npmcdn.com/d3@3"></script>-->
+    <!--<script src="//npmcdn.com/ui-router-visualizer@1"></script>-->
 
 </head>
 
-<body ng-app="helloworld">
+<body ng-app="hellosolarsystem">
 <button onClick="document.location.reload(true)">reload plunker (without changing url)</button>
 <a ui-sref="hello" ui-sref-active="active">Hello</a>
 <a ui-sref="about" ui-sref-active="active">About</a>
 <a ui-sref="people" ui-sref-active="active">People</a>
 
+
+
 <ui-view></ui-view>
+
+<uir-state-vis class="statevis" width="300" height="100"></uir-state-vis>
 </body>
 </html>

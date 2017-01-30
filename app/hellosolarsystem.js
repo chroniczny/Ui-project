@@ -1,7 +1,9 @@
 /**
  * Created by jkwiatkowski on 30.01.2017.
  */
-var myApp = angular.module('hellosolarsystem', ['ui.router', 'ui.router.visualizer']);
+var myApp = angular.module('hellosolarsystem', ['ui.router'
+    // , 'ui.router.visualizer'
+]);
 
 myApp.config(function($stateProvider) {
     // An array of state definitions
@@ -46,7 +48,7 @@ myApp.config(function($stateProvider) {
                 }
             }
         }
-    ]
+    ];
 
     // Loop over the state definitions and register them
     states.forEach(function(state) {
