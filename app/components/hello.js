@@ -4,8 +4,7 @@
 
 angular.module('hellosolarsystem')
     .component('hello', {
-        template: '<h3>{{$ctrl.greeting}} Solar System!</h3>' +
-        '<button ng-click="$ctrl.toggleGreeting()">toggle greeting</button>',
+        templateUrl: "templates/hello.template.html",
 
         controller: function () {
             this.greeting = 'hello';
