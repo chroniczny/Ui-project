@@ -12,19 +12,25 @@ myApp.config(function($stateProvider) {
             name: 'hello',
             url: '/hello',
             // Using component: instead of template:
-            component: 'hello'
+            // component: 'hello'
+            template: '<hello></hello>'
         },
 
         {
             name: 'about',
             url: '/about',
-            component: 'about'
+            // templateUrl: "templates/about.template.html",
+            // component: 'about',
+            template: '<about></about>'
         },
 
         {
             name: 'people',
             url: '/people',
             component: 'people',
+            // controller: 'PeopleCtrl',
+            template: '<people></people>',
+            // templateUrl: '../templates/people.template.html',
             // This state defines a 'people' resolve
             // It delegates to the PeopleService to HTTP fetch (async)
             // The people component receives this via its `bindings: `
@@ -33,13 +39,16 @@ myApp.config(function($stateProvider) {
                     return PeopleService.getAllPeople();
                 }
             }
+
         },
 
         {
             name: 'person',
             // This state takes a URL parameter called personId
             url: '/people/{personId}',
-            component: 'person',
+            // component: 'person',
+
+            template: '<person></person>',
             // This state defines a 'person' resolve
             // It delegates to the PeopleService, passing the personId parameter
             resolve: {
@@ -60,3 +69,4 @@ myApp.config(function($stateProvider) {
 myApp.run(function($http) {
     $http.get('data/people.json', { cache: true });
 });
+

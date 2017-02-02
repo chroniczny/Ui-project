@@ -2,6 +2,18 @@
  * Created by jkwiatkowski on 30.01.2017.
  */
 angular.module('hellosolarsystem').component('people', {
-    bindings: { people: '<' }, // bindings with an input 'people' that matches the resolve name
-    templateUrl: "templates/people.template.html"
+    // controller: 'PeopleCtrl',
+    bindings: {
+        people: '<'
+    },
+    template: '<h3>Some people:</h3>' +
+    '<ul>' +
+    '  <li ng-repeat="person in $ctrl.people">' +
+    '    <a ui-sref="person({ personId: person.id })">' +
+    '      {{person.name}}' +
+    '    </a>' +
+    '  </li>' +
+    '</ul>'
+    // + '<ui-view></ui-view>'
+
 });

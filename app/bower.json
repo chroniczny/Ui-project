@@ -1,0 +1,23 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "project with ui-router",
+  "main": "hellosolarsystem.js",
+  "homepage": " ",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.6.1",
+    "angular-route": "1.6.1",
+    "angular-ui-router": "^0.4.2",
+    "lodash": "^4.17.4"
+  }
+}
