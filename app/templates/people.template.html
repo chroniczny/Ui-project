@@ -1,8 +1,8 @@
-<h3>Some people:</h3>
+<h3>Some people: (in outer template)</h3>
 <ul>
-    <li ng-repeat="person in $ctrl.people">
-        <a ui-sref="person({ personId: person.id })">
+    <li ng-repeat="person in $scope.people">
+        <!--<a ui-sref="person({ personId: person.id })">-->
             {{person.name}}
-        </a>
+        <!--</a>-->
     </li>
 </ul>

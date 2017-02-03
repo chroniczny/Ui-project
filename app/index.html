@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
 
-
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <!--<script src="helloworld.js"></script>-->
 
     <!--  Hello solarsystem Code -->
@@ -17,7 +16,6 @@
     <script src="components/people.js"></script>
     <script src="components/person.js"></script>
 
-
     <!-- Visualizer and url -->
     <!--<link rel="stylesheet" href="styles.css">-->
     <script src="//npmcdn.com/show-current-browser-url"></script>
@@ -27,13 +25,13 @@
 </head>
 
 <body ng-app="hellosolarsystem">
-    <button onClick="document.location.reload(true)">reload plunker (without changing url)</button>
-    <a ui-sref="hello" ui-sref-active="active">Hello</a>
-    <a ui-sref="about" ui-sref-active="active">About</a>
-    <a ui-sref="people" ui-sref-active="active">People</a>
-
-    <ui-view></ui-view>
-
+<div>
+    <button onClick="document.location.reload(true)">reload plunker (without changing the url)</button>
+</div> <a ui-sref="hello" ui-sref-active="active">Hello</a>
+<a ui-sref="about" ui-sref-active="active">About</a>
+<a ui-sref="people" ui-sref-active="active">People</a>
+<ui-view></ui-view>
 <!--<uir-state-vis class="statevis" width="300" height="100"></uir-state-vis>-->
 </body>
+
 </html>

@@ -1,16 +1,16 @@
 /**
  * Created by jkwiatkowski on 30.01.2017.
  */
-angular.module('hellosolarsystem').component('person', {
-    // bindings: {
-    //     person: '<'
-    // },
-    controller: function ($scope) {
-        $scope.person = function (PeopleService, $transition$) {
-            return PeopleService.getPerson($transition$.params().personId);
-        }
-
+angular.module('hello').component('person1', {
+    bindings: {
+        person: '<'
     },
+    // controller: function ($scope) {
+    //     $scope.person = function (PeopleService, $transition$) {
+    //         return PeopleService.getPerson($transition$.params().personId);
+    //     }
+    //
+    // },
 
     template: '<h3>A person!</h3>' +
     '<div>Name: {{$scope.person.name}}</div>' +

@@ -12,7 +12,7 @@ myApp.config(function($stateProvider) {
             name: 'hello',
             url: '/hello',
             // Using component: instead of template:
-            // component: 'hello'
+            component: 'hello',
             template: '<hello></hello>'
         },
 
@@ -20,7 +20,7 @@ myApp.config(function($stateProvider) {
             name: 'about',
             url: '/about',
             // templateUrl: "templates/about.template.html",
-            // component: 'about',
+            component: 'about',
             template: '<about></about>'
         },
 
@@ -28,7 +28,7 @@ myApp.config(function($stateProvider) {
             name: 'people',
             url: '/people',
             component: 'people',
-            // controller: 'PeopleCtrl',
+
             template: '<people></people>',
             // templateUrl: '../templates/people.template.html',
             // This state defines a 'people' resolve
@@ -46,7 +46,7 @@ myApp.config(function($stateProvider) {
             name: 'person',
             // This state takes a URL parameter called personId
             url: '/people/{personId}',
-            // component: 'person',
+            component: 'person',
 
             template: '<person></person>',
             // This state defines a 'person' resolve
@@ -63,10 +63,61 @@ myApp.config(function($stateProvider) {
     states.forEach(function(state) {
         $stateProvider.state(state);
     });
+
 });
 
 // To account for plunker embeds timing out, preload the async data
 myApp.run(function($http) {
     $http.get('data/people.json', { cache: true });
 });
+
+// angular.module('hellosolarsystem', ['ui.router'])
+//     .config([
+//         // '$urlRouteProvider',
+//         '$stateProvider', function ($stateProvider, $urlRouteProvider) {
+//             // $urlRouteProvider.otherwise('/');
+//
+//             $stateProvider
+//                 .state('about', {
+//                     url: '/about',
+//                     template: '<about></about>'
+//
+//                 })
+//                 .state('hello', {
+//                     url: '/hello',
+//                     template: '<hello></hello>'
+//
+//
+//                 })
+//                 .state('people', {
+//                     url: '/people',
+//                     template: '<people></people>',
+//
+//                     resolve: {
+//                         people: function (PeopleService) {
+//                             console.log('people are driving too fast');
+//                             return PeopleService.getAllPeople();
+//                         }
+//                     }
+//                 })
+//                 .state('person', {
+//                     url: '/person',
+//                     template: '<person></person>',
+//
+//                     resolve: {
+//                         person: function (PeopleService, $transition$) {
+//                             return PeopleService.getPerson($transition$.params().personId);
+//                         }
+//                     }
+//                 });
+//             // $stateProvider.state(about);
+//             // $stateProvider.state(hello);
+//             // $stateProvider.state(people);
+//             // $stateProvider.state(person);
+//         }])
+//     .run(function ($http) {
+//         $http.get('data/people.json', {cache: true});
+//     });
+
+
 

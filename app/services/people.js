@@ -7,22 +7,43 @@ angular.module('hellosolarsystem').service('PeopleService', function($http) {
             return $http.get('data/people.json', {
                 cache: true
             }).then(function(resp) {
-                // localStorage.setItem('UiPeople', JSON.stringify(resp.data));
-                console.log(resp.data);
                 return resp.data;
             });
         },
         getPerson: function(id) {
             function personMatchesParam(person) {
-                // console.log(id);
-                return person.id == id;
+                return person.id === id;
             }
             return service.getAllPeople().then(function(people) {
-                console.log("ddd");
                 return people.find(personMatchesParam);
             });
         }
     };
-    console.log('service fired');
     return service;
 });
+
+//// =========AS A FACTORY ===================
+// angular.module('hellosolarsystem')
+//     .factory('People', ['$http', function($http) {
+//     // var service = {
+//         return {
+//         getAllPeople: function() {
+//             return $http.get('/data/people.json', {
+//                 cache: true
+//             }).then(function(resp) {
+//                 return resp.data;
+//             });
+//         },
+//         getPerson: function(id) {
+//             function personMatchesParam(person) {
+//                 return person.id === id;
+//             }
+//             return service.getAllPeople().then(function(people) {
+//                 return people.find(personMatchesParam);
+//             });
+//         }
+//     };
+//     // return service;
+// }
+// ]
+//     );
